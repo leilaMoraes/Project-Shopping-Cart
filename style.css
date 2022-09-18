@@ -150,6 +150,14 @@ body {
   margin-bottom: 20px;
 }
 
+.loading {
+  text-align: center;
+  margin: 20px;
+  font-size: larger;
+  font-weight: 900;
+  color: red;
+}
+
 .empty-cart {
   width: 170px;
   height: 35px;
