@@ -65,13 +65,17 @@ const getIdFromProductItem = (product) => product.querySelector('.item_id').inne
  * @returns {Element} Elemento de um item do carrinho.
  */
 
+const cartItemClickListener = (li) => {
+  li.target.remove();
+};
+
 const createCartItemElement = ({ id, title, price }) => {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `ID: ${id} | TITLE: ${title} | PRICE: $${price}`;
   const pai = document.querySelector('.cart__items');
   pai.appendChild(li);
-  // li.addEventListener('click', cartItemClickListener);
+  li.addEventListener('click', cartItemClickListener);
 };
 
 const getItemCart = async (event) => {

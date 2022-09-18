@@ -140,6 +140,11 @@ body {
   overflow-y: scroll;
 }
 
+.cart__item {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
 .empty-cart {
   width: 170px;
   height: 35px;
