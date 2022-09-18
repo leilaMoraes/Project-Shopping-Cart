@@ -66,7 +66,8 @@ const getIdFromProductItem = (product) => product.querySelector('.item_id').inne
  */
 
 const emptyBtn = document.querySelector('.empty-cart');
-const cart = document.querySelector('.cart__items');
+const cartItems = document.querySelector('.cart__items');
+const total = document.querySelector('.total-price');
 
 const cartItemClickListener = (li) => {
   li.target.remove();
@@ -76,7 +77,7 @@ const createCartItemElement = ({ id, title, price }) => {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `ID: ${id} | TITLE: ${title} | PRICE: $${price}`;
-  cart.appendChild(li);
+  cartItems.appendChild(li);
   li.addEventListener('click', cartItemClickListener);
 };
 
@@ -98,9 +99,10 @@ const productsOnSale = async () => {
 };
 
 emptyBtn.addEventListener('click', () => {
-  cart.innerHTML = '';
+  cartItems.innerHTML = '';
 });
 
 window.onload = async () => {
   productsOnSale();
+  total.innerText = 'Subtotal: R$ 0.00';
 };
